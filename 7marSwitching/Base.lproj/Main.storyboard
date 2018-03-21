@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_marSwitching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-bf-UAA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wvE-rx-KlL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cell" id="jo9-dC-3Cx" customClass="CollectionViewCell" customModule="_marSwitching" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-N9-yDs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cAU-N9-yDs" secondAttribute="bottom" id="4Na-lD-7hz"/>
+                                            <constraint firstItem="cAU-N9-yDs" firstAttribute="leading" secondItem="jo9-dC-3Cx" secondAttribute="leading" id="Bos-aR-Yrg"/>
+                                            <constraint firstAttribute="trailing" secondItem="cAU-N9-yDs" secondAttribute="trailing" id="jxb-Z5-KYR"/>
+                                            <constraint firstItem="cAU-N9-yDs" firstAttribute="top" secondItem="jo9-dC-3Cx" secondAttribute="top" id="sjk-fP-ga4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageOutlet" destination="cAU-N9-yDs" id="hBF-C7-zWG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="005-FU-PaY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8OF-IW-uaa"/>
+                                </connections>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-Gf-O0s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="6VE-pP-Edb">
+                                        <barButtonItem key="rightBarButtonItem" title="Switch" id="ahS-Ps-Aqt">
+                                            <connections>
+                                                <action selector="switchBUttonTapped:" destination="BYZ-38-t0r" id="Fud-e9-gGH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qlZ-bf-UAA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lls-Y1-pvX"/>
+                            <constraint firstItem="IFa-Gf-O0s" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PIn-Ba-ieB"/>
+                            <constraint firstItem="IFa-Gf-O0s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SJn-Zm-0qU"/>
+                            <constraint firstItem="qlZ-bf-UAA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xzb-nN-Rfd"/>
+                            <constraint firstItem="qlZ-bf-UAA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dER-jt-Wrr"/>
+                            <constraint firstItem="IFa-Gf-O0s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gF2-et-thF"/>
+                            <constraint firstItem="qlZ-bf-UAA" firstAttribute="top" secondItem="IFa-Gf-O0s" secondAttribute="bottom" id="tW3-Gw-tlZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="qlZ-bf-UAA" id="tIC-Lz-FAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="-965"/>
+        </scene>
+    </scenes>
+</document>
